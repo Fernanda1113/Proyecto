@@ -1,0 +1,351 @@
+body {
+  background-color: #E1E0E0;
+}
+
+.fondo {
+  width: 100%;
+  height: 200px;
+  border: 10px solid white;
+  background-image: url("../img/fondo.jpg");
+  background-position: -300px -200px;
+  margin: 20px auto;
+  overflow: hidden;
+  -webkit-animation: backBanner 10s linear;
+          animation: backBanner 10s linear;
+}
+
+@-webkit-keyframes backBanner {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -300px -200px;
+  }
+}
+
+@keyframes backBanner {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -300px -200px;
+  }
+}
+
+.fondo h1 {
+  font-family: "Creepster", cursiva;
+  color: black;
+  text-align: center;
+  word-spacing: 10px;
+  font-size: 300%;
+  margin-top: 60px;
+  -webkit-animation: showText 10s linear;
+          animation: showText 10s linear;
+}
+
+h2, h3 {
+  color: maroon;
+  text-align: center;
+  font-family: "Caveat", cursive;
+}
+
+#menu {
+  font-size: 30px;
+}
+
+#menu nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#menu .btn--boton {
+  display: inline-block;
+  text-decoration: none;
+  color: maroon;
+  margin-right: 20px;
+  font-family: "Creepster", cursiva;
+  margin: 0;
+  padding: 10px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+#menu .btn--boton:hover {
+  color: black;
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+
+a {
+  color: white;
+  font-family: "Caveat", cursive;
+  text-decoration: none;
+  font-size: 25px;
+  margin-top: auto;
+  font-weight: 600;
+}
+
+a :hover {
+  color: maroon;
+  text-decoration: none;
+}
+
+p {
+  font-family: "Caveat", cursive;
+  color: maroon;
+  font-size: 20px;
+}
+
+h5 {
+  font-family: "Caveat", cursive;
+  color: black;
+  font-size: 25px;
+}
+
+#tienda .card .card-body {
+  height: 300px;
+  margin-top: 35px;
+}
+
+#historia--parrafo #historia {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1/6;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  grid-column-end: 5;
+}
+
+#historia, #historia--parrafo, td {
+  font-size: 25px;
+  padding: 20px 20px;
+  font-family: 'Caveat', cursive;
+  color: #444;
+  border: solid maroon 1px;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 111px;
+}
+
+.images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  padding: 107px;
+  border: 1px solid maroon;
+}
+
+.images img {
+  height: 200px;
+  width: 200px;
+  margin: 8px;
+  line-height: 75px;
+}
+
+label, h4, .correo, .btn--botones, .validar--validar {
+  font-size: 20px;
+  padding-block: 10px;
+  padding-left: 10px;
+  font-family: "Caveat", cursive;
+  color: maroon;
+  margin-top: 4px;
+  padding: 3px;
+}
+
+.correo {
+  width: 20%;
+  border-radius: 0;
+  line-height: 0.5;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.form-control {
+  border-style: none;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.btnWpp {
+  position: fixed;
+  width: 71px;
+  height: 71px;
+  bottom: 30px;
+  right: 30px;
+  background: url(../img/ico.ico.png);
+  border-radius: 50px;
+}
+
+.btnIg {
+  position: fixed;
+  width: 71px;
+  height: 71px;
+  bottom: 105px;
+  right: 30px;
+  background: url(../img/ico.ico2.png);
+  border-radius: 50px;
+}
+
+.footer {
+  width: 50%;
+  height: 338px;
+  margin-left: 300px;
+  background: #ccc;
+  color: maroon;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+.footer #footer__location {
+  display: block;
+  background: #ccc;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  color: maroon;
+}
+
+.images img {
+  height: 300px;
+  width: 321px;
+  margin: 8px;
+  line-height: 75px;
+}
+
+.btn--boton {
+  font-size: 30px;
+}
+
+.validar--validar {
+  font-size: 25px;
+}
+
+#historia {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+
+@media (max-width: 2400px) {
+  .btn--boton, h2, h3 {
+    font-size: 50px;
+  }
+  td, #historia--parrafo {
+    font-size: 40px;
+  }
+  .carousel-inner {
+    margin-left: 415px;
+  }
+  .images img {
+    height: 370px;
+    width: 408px;
+  }
+  .correo {
+    width: 28%;
+    border-radius: 0;
+    line-height: 2.5;
+    padding-left: 0px;
+    padding-top: 20px;
+  }
+  label, h4, .correo, .btn--botones, .validar--validar {
+    font-size: 36px;
+    padding-block: 10px;
+    padding-left: 10px;
+    font-family: "Caveat", cursive;
+    color: maroon;
+    margin-top: 4px;
+    padding: 3px;
+  }
+  .form-control {
+    font-size: 2rem;
+  }
+  .footer {
+    margin-left: 620px;
+  }
+  .autor, h5 {
+    font-size: 25px;
+  }
+  .form--contacto {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 1444px) {
+  .footer {
+    margin-left: 414px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .carousel-inner {
+    margin-left: 111px;
+  }
+  .footer {
+    margin-left: 294px;
+  }
+  .images img {
+    width: 441px;
+  }
+}
+
+@media (max-width: 631px) {
+  .btn--boton, h2, h3 {
+    font-size: 32px;
+  }
+  td, #historia--parrafo {
+    font-size: 27px;
+  }
+  .carousel-inner {
+    margin-left: 25px;
+  }
+  label, h4, .correo, .btn--botones, .validar--validar {
+    font-size: 26px;
+  }
+  .form-control {
+    font-size: 1rem;
+  }
+  .footer {
+    margin-left: 190px;
+  }
+}
+
+@media (max-width: 433px) {
+  .btn--boton, h2, h3 {
+    font-size: 26px;
+    padding: 8px;
+  }
+  .carousel-inner {
+    margin-left: -6px;
+  }
+  .footer {
+    margin-left: 126px;
+  }
+  #historia, #historia--parrafo, td {
+    font-size: 25px;
+    padding: 7px 5px;
+  }
+  .images img {
+    width: 659px;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */

@@ -1,0 +1,319 @@
+$color-letra:maroon;
+$color-fondo:#E1E0E0;
+$tipo-letra:'Caveat', cursive;
+$tipo-letra2:'Creepster', cursiva;
+
+
+body{
+    background-color: #E1E0E0;
+}
+
+.fondo{
+    width: 100%;
+    height: 200px;
+    border: 10px solid white;
+    background-image: url("../img/fondo.jpg");
+    background-position: -300px -200px;
+    margin: 20px auto;
+    overflow: hidden;
+    animation: backBanner 10s linear;
+    @keyframes backBanner{
+        0%{
+            background-position: 0px 0px;
+        }
+        100%{
+            background-position: -300px -200px;
+        }
+    }
+    h1{
+        font-family: $tipo-letra2;
+        color: black;
+        text-align: center;
+        word-spacing: 10px;
+        font-size: 300%;
+        margin-top: 60px;
+        animation: showText 10s linear;
+    }
+}
+
+@mixin crear($color, $aling, $family) {
+    color: $color-letra;
+    text-align: $aling;
+    font-family: $family;    
+}
+h2, h3{
+    @include crear($color-letra, center, $tipo-letra);
+}
+
+#menu{
+    font-size: 30px;
+    nav{
+        display: flex;
+        justify-content: center;
+    }
+    .btn--boton{
+        display: inline-block;
+        text-decoration: none;
+        color: $color-letra;
+        margin-right: 20px;
+        font-family: $tipo-letra2;
+        margin: 0;
+        padding: 10px;
+        transition: all 200ms;
+       
+    }
+    .btn--boton:hover{
+        color: black;
+        transform: scale(1.2, 1.2);
+    }
+    
+}
+
+
+    a{
+        color: white;
+        font-family: $tipo-letra;
+        text-decoration: none;
+        font-size: 25px;
+        margin-top: auto;
+        font-weight: 600;
+        :hover{
+            color: $color-letra;
+            text-decoration: none;
+        }
+    }
+    p{
+        font-family: $tipo-letra;
+        color: $color-letra;
+        font-size: 20px;
+    }
+    h5{
+        font-family: $tipo-letra;
+        color: black;
+        font-size: 25px;
+    }
+
+#tienda{
+    .card{
+        .card-body{
+            height: 300px;
+            margin-top: 35px;
+        }
+    }
+
+}
+#historia--parrafo #historia{
+    display: grid;
+    grid-column: 1/6;
+    grid-column: 2;
+    grid-column-end: 5;
+}
+#historia, #historia--parrafo, td{
+    font-size: 25px;
+        padding: 20px 20px;
+        font-family: 'Caveat', cursive;
+        color: #444;
+        border: solid maroon 1px;
+}
+
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-left: 111px;
+}
+
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 107px;
+    border: 1px solid $color-letra;
+    img{
+        height: 200px;
+        width: 200px;
+        margin: 8px;
+        line-height: 75px;
+    }
+}
+label, h4, .correo, .btn--botones, .validar--validar{
+    font-size: 20px;
+    padding-block: 10px;
+    padding-left: 10px;
+    font-family: $tipo-letra;
+    color: $color-letra;
+    margin-top: 4px;
+	padding: 3px;
+}
+.correo{
+    width: 20%;
+	border-radius: 0;
+	line-height: 0.5;
+	padding-left: 10px;
+	padding-top: 20px;
+}
+
+.form-control{
+    border-style: none;
+    outline: none;
+    box-shadow: none;
+}
+.form-control:focus{
+    box-shadow: none;
+    outline: none;
+}
+.btnWpp{
+	position: fixed;
+	width: 71px;
+	height: 71px;
+	bottom: 30px;
+	right: 30px;
+	background: url(../img/ico.ico.png);
+	border-radius: 50px;
+}
+.btnIg{
+	position: fixed;
+	width: 71px;
+	height: 71px;
+	bottom: 105px;
+	right: 30px;
+	background: url(../img/ico.ico2.png);
+	border-radius: 50px;
+}
+
+.footer{
+    width: 50%;
+    height: 338px;
+    margin-left: 300px;
+    background: #ccc;
+    color: maroon;
+    overflow: hidden;
+    border-radius: 50px;
+    #footer__location{
+    display: block;
+    background:#ccc;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    color: maroon;
+    }
+
+}
+.images img {
+    height: 300px;
+    width: 321px;
+    margin: 8px;
+    line-height: 75px;
+}
+
+.btn--boton{
+    font-size: 30px;
+}
+.validar--validar{
+    font-size: 25px;
+}
+#historia{
+    font-family:'Caveat', cursive;
+    font-size: 25px;
+}
+@media(max-width: 2400px){
+    .btn--boton, h2, h3{
+      font-size: 50px;
+    }
+    td, #historia--parrafo{
+        font-size: 40px;
+    }
+    .carousel-inner{
+        margin-left: 415px;
+    }
+    .images img {
+        height: 370px;
+        width: 408px;
+    }
+    .correo{
+        width: 28%;
+        border-radius: 0;
+        line-height: 2.5;
+        padding-left: 0px;
+        padding-top: 20px;
+    }
+    
+    label, h4, .correo, .btn--botones, .validar--validar {
+    font-size: 36px;
+    padding-block: 10px;
+    padding-left: 10px;
+    font-family: "Caveat", cursive;
+    color: maroon;
+    margin-top: 4px;
+    padding: 3px;
+    }
+    .form-control{
+        font-size: 2rem;
+    }
+    .footer{
+        margin-left: 620px;
+    }
+    .autor, h5{
+        font-size: 25px;
+    }
+    .form--contacto {
+        margin-top: 5px;
+    }
+}
+@media (max-width: 1444px){
+.footer {
+    margin-left: 414px;
+    }
+}
+@media (max-width: 1100px){
+.carousel-inner {
+    margin-left: 111px;
+    }
+ .footer {
+    margin-left: 294px;
+    }
+.images img {
+    width: 441px;
+    }
+}
+
+@media (max-width: 631px){
+.btn--boton, h2, h3 {
+    font-size: 32px;
+    }
+ td, #historia--parrafo {
+    font-size: 27px;
+    }
+.carousel-inner {
+    margin-left: 25px;
+    }
+label, h4, .correo, .btn--botones, .validar--validar {
+    font-size: 26px;
+    }
+.form-control {
+    font-size: 1rem;
+    }
+.footer{
+    margin-left: 190px;
+    }
+}
+@media (max-width: 433px){
+.btn--boton, h2, h3 {
+    font-size: 26px;
+    padding: 8px;
+    }
+.carousel-inner {
+    margin-left: -6px;
+   }
+.footer {
+    margin-left: 126px;
+    }
+#historia, #historia--parrafo, td {
+        font-size: 25px;
+        padding: 7px 5px;
+    }
+.images img {
+    width: 659px;
+    }
+}
