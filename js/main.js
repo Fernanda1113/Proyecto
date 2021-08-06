@@ -1,8 +1,3 @@
-alert("Hola! esta es una pagina con contenido fuerte en algunas historias, si eres sensible te recomiendo leer otro tipo de contenido :D");
-
-alert("Bienvenidx a Cuentame tu histoira, el desarollador no se hace responsable de daños psicologicos");
-
-
 class Producto{
             constructor(id, nombre, precio, imagen) {
                     this.id = parseInt(id);
@@ -65,42 +60,49 @@ function manejador(){
 for (const boton of botones){
     boton.addEventListener("click", manejador);
 }
-
 const formulario = document.getElementById("addProducto");
-/*const productoRegistrado = [];
+
+const productoRegistrado = [];
 formulario.addEventListener("submit", function(event){
     event.preventDefault();
     const inputs = formulario.children;
     console.log(inputs);
     const nuevo = new Producto(inputs[0].value,
                                inputs[1].value, 
-                               inputs[2].value)
-                               inputs[3].value;
+                               inputs[2].value,
+                               inputs[3].value);
     productoRegistrado.push(nuevo);
     localStorage.setItem('productos',JSON.stringify(productoRegistrado));
     tienda(productos);
-})*/
+})
+
 formulario.onsubmit = (event) =>{
     event.preventDefault();
     const inputs = formulario.children;
     console.log(inputs);
-    const nuevoProducto = new Producto(getID(),inputs[0].value,
+    const nuevoProducto = new Producto(inputs[0].value,
     inputs[1].value, 
     inputs[2].value,
     inputs[3].value);
     console.log(nuevoProducto);
     productos.push(nuevoProducto);
     tienda(productos);
-}
+
+
+} 
 function tienda(productos){
-    const divProductosUI = document.getElementById('tienda');
-    divProductosUI.innerHTML = '';
+    const divtienda = document.getElementById('tienda');
+    divtienda.innerHTML = '';
     for (const producto of productos) {
             let div = document.createElement("div");
-            div.innerHTML = `<h2>${producto.nombre}</h2>
-                            </h3>${producto.precio}</h3>
-                            <button id='${producto.id}' class="btnCompra">COMPRAR</button>`;
-            divtienda.appendChild(div);
+            div.classList.add("card");
+                div.innerHTML = `<div class="card-body ">
+                <h2>${producto.nombre}</h2>
+                <img src='${producto.imagen}'>
+                <h3>${producto.precio}</h3>
+                <button id="${producto.id}" class="btn btn-dark">COMPRAR</button>
+                </div>`;
+                divtienda.appendChild(div);
     }
     const botones = document.getElementsByClassName('btnCompra');
     for (const boton of botones) {
