@@ -1,115 +1,104 @@
-class Producto{
-            constructor(id, nombre, precio, imagen) {
-                    this.id = parseInt(id);
-                    this.nombre = nombre;
-                    this.precio = parseFloat(precio);
-                    this.imagen = imagen;
-            }
-}
-
-
+//Globales
 const productos = [];
-if("productos" in localStorage){
-    console.log("Clave existente");
-    const guardado = JSON.parse(localStorage.getItem("productos"));
-    console.log(guardado);
-    for (const producto of guardado) {
-        productos.push(new Producto(producto.id, producto.nombre, producto.precio, producto.imagen));
+const carrito   = [];
+const categorias = ["Policial","Asesinatos","Investigaciones"];
+//Declaración de los productos (libros)
+class Producto {
+    constructor(id, nombre, precio,categoria,cantidad) {
+            this.id = parseInt(id);
+            this.nombre = nombre;
+            this.precio = parseFloat(precio);
+            this.categoria = categoria;
+            this.cantidad  = cantidad || 1;
+    }
+
+    agregarCantidad(valor){
+        this.cantidad += valor; 
+    }
+
+    subtotal(){
+        return this.cantidad * this.precio;
     }
 }
-
-//Libros/productos
-productos.push(new Producto(1,"El oscuro pasajero",180, "../img/dexter1.jpeg" ));
-productos.push(new Producto(2, "Querido Dexter", 80, "../img/dexter2.jpeg"));
-productos.push(new Producto(3, "Dexter en la oscuridad", 160, "../img/dexter3.jpeg"));
-productos.push(new Producto(4, "Por decisión propia", 90, "../img/dexter4.jpeg"));
-
-for (const producto of productos) {
-    let div = document.createElement("div");
-
-    div.classList.add("card");
-    //Estructurar el div
-    div.innerHTML = `<div class="card-body ">
-                             <h2>${producto.nombre}</h2>
-                             <img src='${producto.imagen}'>
-                             <h3>${producto.precio}</h3>
-                             <button id="${producto.id}" class="btn btn-dark">COMPRAR</button>
-                             </div>`;
-    document.getElementById('tienda').appendChild(div);
-}
-
-const botones = document.getElementsByClassName('btn-dark');
-console.log(botones);
-
-const carro = [];
-
-function manejador(){
-    const selecciona = productos.find( producto => producto.id == this.id);
-    carro.push(selecciona);
-    console.log(carro);
-    localStorage.setItem('carro', JSON.stringify(carro));
-    const divCarro = document.getElementById('carro');
-    divCarro.innerHTML = '';
-    for(const producto of carro){
-        let item = document.createElement("p");
-        item.innerHTML = `Producto: ${producto.nombre} ${producto.precio}`;
-        divCarro.appendChild(item);
-    }
-}
-
-for (const boton of botones){
-    boton.addEventListener("click", manejador);
-}
-const formulario = document.getElementById("addProducto");
-
-const productoRegistrado = [];
-formulario.addEventListener("submit", function(event){
-    event.preventDefault();
-    const inputs = formulario.children;
-    console.log(inputs);
-    const nuevo = new Producto(inputs[0].value,
-                               inputs[1].value, 
-                               inputs[2].value,
-                               inputs[3].value);
-    productoRegistrado.push(nuevo);
-    localStorage.setItem('productos',JSON.stringify(productoRegistrado));
-    tienda(productos);
-})
-
-formulario.onsubmit = (event) =>{
-    event.preventDefault();
-    const inputs = formulario.children;
-    console.log(inputs);
-    const nuevoProducto = new Producto(inputs[0].value,
-    inputs[1].value, 
-    inputs[2].value,
-    inputs[3].value);
-    console.log(nuevoProducto);
-    productos.push(nuevoProducto);
-    tienda(productos);
-
-
-} 
-function tienda(productos){
-    const divtienda = document.getElementById('tienda');
-    divtienda.innerHTML = '';
+//Implementación de Jquery
+function productosUI(productos, id){
+    $(id).empty();
     for (const producto of productos) {
-            let div = document.createElement("div");
-            div.classList.add("card");
-                div.innerHTML = `<div class="card-body ">
-                <h2>${producto.nombre}</h2>
-                <img src='${producto.imagen}'>
-                <h3>${producto.precio}</h3>
-                <button id="${producto.id}" class="btn btn-dark">COMPRAR</button>
-                </div>`;
-                divtienda.appendChild(div);
+       $(id).append(`<div class="card" style="width: 18rem;">
+                      <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">${producto.nombre}</h5>
+                        <p class="card-text">${producto.precio}</p>
+                        <span class="badge badge-info">${producto.categoria}</span>
+                        <a href="#" id='${producto.id}' class="btn btn-primary btn-compra">COMPRAR</a>
+                      </div>
+                    </div>`);
     }
-    const botones = document.getElementsByClassName('btnCompra');
-    for (const boton of botones) {
-            boton.addEventListener("click", manejador);
+  }
+  //Manejar la compra de libros
+  function comprarProducto(e){
+    e.preventDefault();
+    const idProducto   = e.target.id;
+    const seleccionado = carrito.find(p => p.id == idProducto);
+    if(seleccionado == undefined){
+      carrito.push(productos.find(p => p.id == idProducto));
+    }else{
+      seleccionado.agregarCantidad(1);
     }
-}
-function getID(){
-    return productos.length;
-}
+   
+    //Guardar en el localStorage
+    localStorage.setItem("CARRITO",JSON.stringify(carrito));
+    carritoUI(carrito);
+  }
+  function carritoUI(productos){
+    $('#carritoCantidad').html(productos.length);
+    $('#carritoProductos').empty();
+    for (const producto of productos) {
+      $('#carritoProductos').append(registroCarrito(producto));
+    }
+    $('.btn-delete').on('click', eliminarCarrito);
+    $('.btn-add').click(addCantidad);
+    $('.btn-sub').click(subCantidad);
+  }
+  //Html
+  function registroCarrito(producto){
+    return `<p> ${producto.nombre} 
+            <span class="badge badge-warning">$ ${producto.precio}</span>
+            <span class="badge badge-dark">${producto.cantidad}</span>
+            <span class="badge badge-success"> $ ${producto.subtotal()}</span>
+            <a id="${producto.id}" class="btn btn-info    btn-add">+</a>
+            <a id="${producto.id}" class="btn btn-warning btn-sub">-</a>
+            <a id="${producto.id}" class="btn btn-danger  btn-delete">x</a>
+            </p>`
+  }
+  
+  function eliminarCarrito(e){
+    console.log(e.target.id);
+    let posicion = carrito.findIndex(p => p.id == e.target.id);
+    carrito.splice(posicion, 1);
+    console.log(carrito);
+    carritoUI(carrito);
+    localStorage.setItem("CARRITO",JSON.stringify(carrito));
+  }
+  //Sumando cantidad
+  function addCantidad(){
+    let producto = carrito.find(p => p.id == this.id);
+    producto.agregarCantidad(1);
+    $(this).parent().children()[1].innerHTML = producto.cantidad;
+    $(this).parent().children()[2].innerHTML = producto.subtotal();
+    //Guardar en el localStorage
+    localStorage.setItem("CARRITO",JSON.stringify(carrito));
+  }
+  //Menos cantidad
+  function subCantidad(){
+    let producto = carrito.find(p => p.id == this.id);
+    if(producto.cantidad > 1){
+      producto.agregarCantidad(-1);
+      let registroUI = $(this).parent().children();
+      registroUI[1].innerHTML = producto.cantidad;
+      registroUI[2].innerHTML = producto.subtotal();
+      //Guardar en el localStorage
+      localStorage.setItem("CARRITO",JSON.stringify(carrito));
+    }
+  }
 
