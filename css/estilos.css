@@ -80,30 +80,61 @@ h2, h3 {
           transform: scale(1.2, 1.2);
 }
 
-a {
+#contenedorLibros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+}
+
+#contenedorLibros .card .card-title, #contenedorLibros .card .card-text {
+  text-align: center;
+}
+
+#contenedorLibros .card .badge {
+  color: maroon;
+}
+
+#contenedorLibros .card a {
+  text-align: center;
   color: white;
   font-family: "Caveat", cursive;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   margin-top: auto;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-a :hover {
+#contenedorLibros .card a :hover {
   color: maroon;
   text-decoration: none;
 }
 
-p {
+#contenedorLibros .card p {
   font-family: "Caveat", cursive;
   color: maroon;
   font-size: 20px;
 }
 
-h5 {
+#contenedorLibros .card h5 {
   font-family: "Caveat", cursive;
   color: black;
   font-size: 25px;
+}
+
+.subir {
+  color: maroon;
+  font-family: "Caveat", cursive;
+  text-decoration: none;
+  display: block;
+  float: right;
 }
 
 #historia--parrafo #historia {

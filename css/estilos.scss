@@ -69,29 +69,50 @@ h2, h3{
     
 }
 
-
-    a{
-        color: white;
-        font-family: $tipo-letra;
-        text-decoration: none;
-        font-size: 25px;
-        margin-top: auto;
-        font-weight: 600;
-        :hover{
-            color: $color-letra;
+#contenedorLibros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    .card{
+        .card-title, .card-text{
+            text-align: center;
+        }
+        .badge{
+            color:maroon;
+        }
+        a{  
+            text-align: center;
+            color: white;
+            font-family: $tipo-letra;
             text-decoration: none;
+            font-size: 15px;
+            margin-top: auto;
+            font-weight: 500;
+            :hover{
+                color: $color-letra;
+                text-decoration: none;
+            }
+        }
+        p{
+            font-family: $tipo-letra;
+            color: $color-letra;
+            font-size: 20px;
+        }
+        h5{
+            font-family: $tipo-letra;
+            color: black;
+            font-size: 25px;
         }
     }
-    p{
-        font-family: $tipo-letra;
-        color: $color-letra;
-        font-size: 20px;
-    }
-    h5{
-        font-family: $tipo-letra;
-        color: black;
-        font-size: 25px;
-    }
+}   
+.subir{
+    color: $color-letra;
+    font-family: $tipo-letra;
+    text-decoration: none;
+    display: block;
+    float: right;
+}
 
 #historia--parrafo #historia{
     display: grid;

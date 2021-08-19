@@ -34,18 +34,24 @@
                 <a href="../contenido/tienda.html" class="btn--boton" title="tienda">Tienda</a>
             </nav>
         </div>
-        <!--INICIO CONTACTO-->
-        <br>
-        <div id="carro"></div>
-        <div id="tienda"></div>
-        <h5>Agrega un libro que te gustaria comprar</h5>
-        <form id="addProducto">
-            <input type="text" placeholder="id">
-            <input type="text" placeholder="nombre">
-            <input type="number" placeholder="precio">
-            <input type="text" placeholder="imagen">            
-            <input type="submit" value="Agregar producto">
-        </form>
+        <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Bolsa de compras<span id="carroCantidad" class="badge badge-light">0</span>
+            </button>
+            <div id="carroLibros" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            </div>
+        </div>
+
+        <div id="indicadorCarga" class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Cargando...</span>
+            </div>
+        </div>
+        <hr>
+        <div id="contenedorLibros">
+            <!--Aquí es donde tengo las cards-->
+        </div>
+        <a href="#" class="subir">Ir arriba</a>
         <a href="https://api.whatsapp.com/send?phone=+543023855633&text=Hola,%20me%20gustar%C3%ADa%20contar%20mi%20historia%20"
             class="btnWpp" target="_blank">
             <i class="icon"></i>
@@ -70,9 +76,15 @@
 
     </footer>
     <!--FIN FOOTER-->
-    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
     
     <script src="../js/main.js"></script>
+    <script src="../js/complemento.js"></script>
 </body>
 
 </html>
