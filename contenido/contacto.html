@@ -2,62 +2,70 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="keywords" content="Enviar historias"/>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+	<meta name="keywords" content="Contar historias de terror">
+	<meta name="description" content="Este es un sitio web para compartir historias paranormales que conozcas o te hayan pasado.">
+	<meta name="author" content="Erika Puentes">
+	<meta name="copyright" content="Propietario del copyright Erika Puentes">
+	<meta name="robots" content="index">
+	<meta name="robots" content="noindex">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta name="google" content="nositelinkssearchbox">
 	<title>Comparte tu historia</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Creepster&display=swap"
+		rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/estilos.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Creepster&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <script src="js/main.js"></script>
 </head>
 <body>
   <!--INICIO ENCABEZADO-->
   <div class="fondo">
     <h1>Comparte tu historia</h1>
   </div>
+  <hr>
   <!--FIN ENCABEZADO-->
 
   <!--INICIO CONTENEDOR-->
   <div class="container">
-  <div id="menu">
-		<nav>			
-		<a href="../index.html" class="btn--boton" title="inicio">Inicio</a>
-		<a href="../contenido/historias.html" class="btn--boton" title="historias">Historias</a>
-		<a href="../contenido/imagenes.html" class="btn--boton" title="media">Media</a>
-		<a href="../contenido/contacto.html" class="btn--boton" title="contacto">Contacto</a>
-    <a href="../contenido/tienda.html" class="btn--boton" title="tienda">Tienda</a>
-	</nav>
-	</div>
+    <div id="menu">
+      <nav>
+          <a href="../index.html" class="btn--boton" title="inicio">Inicio</a>
+          <a href="../contenido/historias.html" class="btn--boton" title="historias">Historias</a>
+          <a href="../contenido/imagenes.html" class="btn--boton" title="media">Media</a>
+          <a href="../contenido/tienda.html" class="btn--boton" title="tienda">Tienda</a>
+          <a href="../contenido/contacto.html" class="btn--boton" title="contacto">Contacto</a>
+      </nav>
+  </div>
+    <hr>
 		<!--INICIO CONTACTO-->
-    <form>
-      <p class="form--contacto">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" placeholder="Ingresa tu nombre">
-        <label>Email:</label>
-		<input type="text" name="email" placeholder="Ingresa tu email">
-      </p>
-      <p class="form--contacto">
-        <label for="mensaje">Mensaje:</label>
-        <textarea name="mensaje" rows="4" cols="80"></textarea>
-      </p>
-      <p class="form--contacto">
-        <label for="edad">Edad</label> 
-        <select name="edad">
-          <option value="menor">Soy menor de edad</option>
-          <option value="adulto">Soy adulto</option>
-        </select>
-      </p>
-      
-      <a href="#" class="btn btn--botones">ENVIAR</a>
-      
-    </form>
+     <div class="correo">
+        <label class="titulo">Nombre:</label>
+        <input type="text" class="form-control" placeholder="Titulo de la historia">
+        <label for="exampleFormControlInput1" class="titulo">Email:</label>
+        <input type="email" class="form-control" id="Input1" placeholder="ingresa@correo.com">
+      </div>
+      <div class="correo__dos">
+        <form action="recibe.html" method="POST" enctype="multipart/form-data">
+          <label for="exampleFormControlTextarea1" class="titulo">Mensaje:</label>
+          <textarea class="form-control" id="Textarea1" s="3"></textarea>
+          <p class="form--contacto">
+            <label class="titulo" for="edad">Edad:</label> 
+            <select name="edad">
+              <option value="menor">Soy menor de edad</option>
+              <option value="adulto">Soy adulto</option>
+            </select>
+          </p>
+          <a href="#" class="btn btn--botones">ENVIAR</a>
+        </form>    
+      </div>
 	</ul>
 
   <hr>
-  <a href="https://api.whatsapp.com/send?phone=+543023855633&text=Hola,%20me%20gustar%C3%ADa%20contar%20mi%20historia%20" class="btnWpp" target="_blank">
+  <a href="https://api.whatsapp.com/send?phone=+573023855633&text=Hola,%20me%20gustar%C3%ADa%20contar%20mi%20historia%20" class="btnWpp" target="_blank">
 		<i class="icon"></i>
 	</a>
   <a href="https://www.instagram.com/fer_nandapp/" class="btnIg" target="_blank">
@@ -66,6 +74,18 @@
   <!--FIN CONTACTO-->
   </div>
   <!--FIN CONTENEDOR-->
+  <!--INICIO FOOTER-->
+	<footer class="footer">
+		<div id="footer__location">
+			<h4>Autor</h4>
+			<p class="autor">&copy; Erika Puentes - Fer_nandapp</p>
+			<h3>Ubicación</h3>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.5164107565!2d-74.2478938043006!3d4.648283717342738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1623959684054!5m2!1ses!2sco"
+				width="200" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+				tabindex="0"></iframe>
+		</div>
+	</footer>  <!--FIN CONTENEDOR-->
   <!--INICIO FOOTER-->
   <footer class="footer">
 		<div id="footer__location">
@@ -77,6 +97,5 @@
 		
 	</footer>
   <!--FIN FOOTER-->
-  <script src="js/main.js"></script>
 </body>
 </html>

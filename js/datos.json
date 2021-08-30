@@ -1,0 +1,50 @@
+[
+    {
+        "precio": 82.000,
+        "id":1,
+        "titulo": "El pasajero oscuro -2004",
+        "img": "../img/dexter1.jpeg"
+    },
+    {
+        "precio": 83.000,
+        "id":2,
+        "titulo": "Querido Dexter -2005",
+        "img": "../img/dexter2.jpeg"
+    },
+    {
+        "precio": 84.000,
+        "id":3,
+        "titulo": "Dexter en la oscuridad -2007",
+        "img": "../img/dexter3.jpeg"
+    },
+    {
+        "precio": 85.000,
+        "id":4,
+        "titulo": "Por desicisión propia -2009",
+        "img": "../img/dexter4.jpeg"
+    },
+    {
+        "precio": 86.000,
+        "id":5,
+        "titulo": "El asesino exquisito -2010",
+        "img": "../img/dexter5.jpeg"
+    },
+    {
+        "precio": 87.000,
+        "id":6,
+        "titulo": "Dexter por Dos -2011",
+        "img": "../img/dexter6.jpeg"
+    },
+    {
+        "precio": 88.000,
+        "id":7,
+        "titulo": "Dexter, camara, acción -2013",
+        "img": "../img/dexter7.jpeg"
+    },
+    {
+        "precio": 89.000,
+        "id":8,
+        "titulo": "La muerte de Dexter -2015",
+        "img": "../img/dexter8.jpeg"
+    }
+]

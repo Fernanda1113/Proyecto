@@ -72,6 +72,7 @@ h2, h3 {
   padding: 10px;
   -webkit-transition: all 200ms;
   transition: all 200ms;
+  font-size: 30px;
 }
 
 #menu .btn--boton:hover {
@@ -80,64 +81,49 @@ h2, h3 {
           transform: scale(1.2, 1.2);
 }
 
-#contenedorLibros {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
+.card-body {
+  width: 100%;
+  height: 355px;
+  -webkit-box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 20px 7px rgba(0, 0, 0, 0.7);
 }
 
-#contenedorLibros .card .card-title, #contenedorLibros .card .card-text {
-  text-align: center;
-}
-
-#contenedorLibros .card .badge {
-  color: maroon;
-}
-
-#contenedorLibros .card a {
-  text-align: center;
+.card-body a {
   color: white;
   font-family: "Caveat", cursive;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 25px;
   margin-top: auto;
-  font-weight: 500;
+  font-weight: 600;
 }
 
-#contenedorLibros .card a :hover {
+.card-body a :hover {
   color: maroon;
   text-decoration: none;
 }
 
-#contenedorLibros .card p {
+.card-body p {
   font-family: "Caveat", cursive;
   color: maroon;
   font-size: 20px;
 }
 
-#contenedorLibros .card h5 {
+.card-body h5, .card-body h6 {
   font-family: "Caveat", cursive;
   color: black;
   font-size: 25px;
 }
 
-.subir {
-  color: maroon;
-  font-family: "Caveat", cursive;
-  text-decoration: none;
-  display: block;
-  float: right;
+.card {
+  margin: 20px 10px;
 }
 
-#historia--parrafo #historia {
+.card img {
+  width: 100%;
+  height: 300px;
+}
+
+#historia--parrafo {
   display: -ms-grid;
   display: grid;
   -ms-grid-column: 1;
@@ -148,41 +134,47 @@ h2, h3 {
   grid-column-end: 5;
 }
 
-#historia, #historia--parrafo, td {
+#historia--parrafo, td {
   font-size: 25px;
-  padding: 20px 20px;
-  font-family: 'Caveat', cursive;
+  padding: -1px 20px;
+  font-family: "Caveat", cursive;
   color: #444;
   border: solid maroon 1px;
 }
 
-.carousel-inner {
-  position: relative;
+.carousel-slide {
+  height: 50vh;
+}
+
+img {
   width: 100%;
-  overflow: hidden;
-  margin-left: 111px;
 }
 
-.images {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
-  padding: 107px;
-  border: 1px solid maroon;
+.galeria {
+  width: 100%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: .5rem;
+          column-gap: .5rem;
+  row-gap: .5rem;
 }
 
-.images img {
-  height: 200px;
-  width: 200px;
-  margin: 8px;
-  line-height: 75px;
+.galeria .imagen {
+  width: 100%;
 }
 
-label, h4, .correo, .btn--botones, .validar--validar {
+.galeria .imagen img {
+  width: 100%;
+}
+
+video {
+  margin: 20px;
+}
+
+.titulo, .correo, .btn--botones, .validar--validar, .btn-dark {
   font-size: 20px;
   padding-block: 10px;
   padding-left: 10px;
@@ -193,11 +185,15 @@ label, h4, .correo, .btn--botones, .validar--validar {
 }
 
 .correo {
-  width: 20%;
+  width: 50%;
   border-radius: 0;
   line-height: 0.5;
   padding-left: 10px;
   padding-top: 20px;
+}
+
+.form--contacto {
+  font-family: "Caveat", cursive;
 }
 
 .form-control {
@@ -234,9 +230,8 @@ label, h4, .correo, .btn--botones, .validar--validar {
 }
 
 .footer {
-  width: 50%;
-  height: 338px;
-  margin-left: 300px;
+  width: 100%;
+  height: 360px;
   background: #ccc;
   color: maroon;
   overflow: hidden;
@@ -248,130 +243,126 @@ label, h4, .correo, .btn--botones, .validar--validar {
   background: #ccc;
   letter-spacing: 2px;
   text-align: center;
-  font-family: 'Caveat', cursive;
+  font-family: "Caveat", cursive;
   color: maroon;
 }
 
-.images img {
-  height: 300px;
-  width: 321px;
-  margin: 8px;
-  line-height: 75px;
+h2, h3 {
+  font-size: 50px;
 }
 
-.btn--boton {
+.titulo {
   font-size: 30px;
 }
 
-.validar--validar {
-  font-size: 25px;
+.subir {
+  color: maroon;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  text-decoration: none;
+  display: block;
+  float: right;
 }
 
-#historia {
-  font-family: 'Caveat', cursive;
-  font-size: 25px;
-}
-
-@media (max-width: 2400px) {
-  .btn--boton, h2, h3 {
-    font-size: 50px;
-  }
-  td, #historia--parrafo {
+@media (max-width: 1200px) {
+  #menu .btn--boton {
     font-size: 40px;
+    padding: 6px;
   }
-  .carousel-inner {
-    margin-left: 415px;
+  .card-body {
+    width: 100%;
+    height: 360px;
   }
-  .images img {
-    height: 370px;
-    width: 408px;
+  .card-body a {
+    margin-top: 0px;
+    font-size: 19px;
   }
-  .correo {
-    width: 28%;
-    border-radius: 0;
-    line-height: 2.5;
-    padding-left: 0px;
-    padding-top: 20px;
+  .galeria {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
-  label, h4, .correo, .btn--botones, .validar--validar {
-    font-size: 36px;
-    padding-block: 10px;
-    padding-left: 10px;
-    font-family: "Caveat", cursive;
-    color: maroon;
-    margin-top: 4px;
-    padding: 3px;
+}
+
+@media (max-width: 1024px) {
+  #menu .btn--boton {
+    font-size: 40px;
+    padding: 6px;
   }
-  .form-control {
-    font-size: 2rem;
+  .card-body {
+    width: 100%;
+    height: 200px;
   }
-  .footer {
-    margin-left: 620px;
+  .card-body .card-text, .card-body .card-author {
+    display: none;
   }
-  .autor, h5 {
+}
+
+@media (max-width: 768px) {
+  #menu .btn--boton {
     font-size: 25px;
+    padding: 4px;
   }
-  .form--contacto {
-    margin-top: 5px;
+  .galeria {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
-}
-
-@media (max-width: 1444px) {
-  .footer {
-    margin-left: 414px;
+  .card-body {
+    width: 100%;
+    height: 220px;
   }
-}
-
-@media (max-width: 1100px) {
-  .carousel-inner {
-    margin-left: 111px;
-  }
-  .footer {
-    margin-left: 294px;
-  }
-  .images img {
-    width: 441px;
+  .card-body .card-text, .card-body .card-author {
+    display: unset;
   }
 }
 
-@media (max-width: 631px) {
-  .btn--boton, h2, h3 {
-    font-size: 32px;
+@media (max-width: 480px) {
+  #menu .btn--boton {
+    font-size: 20px;
+    padding: 4px;
   }
-  td, #historia--parrafo {
-    font-size: 27px;
+  .card-body {
+    width: 100%;
+    height: 210px;
   }
-  .carousel-inner {
-    margin-left: 25px;
+  .card-body .card-text {
+    display: unset;
   }
-  label, h4, .correo, .btn--botones, .validar--validar {
-    font-size: 26px;
+  .card-body .card-author {
+    display: unset;
   }
-  .form-control {
-    font-size: 1rem;
+  .card-body a {
+    margin-top: 0px;
+    font-size: 19px;
   }
-  .footer {
-    margin-left: 190px;
+  .galeria {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 433px) {
-  .btn--boton, h2, h3 {
-    font-size: 26px;
-    padding: 8px;
+@media (max-width: 320px) {
+  #menu nav a {
+    border-left: 1px solid maroon;
+    border-right: 1px solid maroon;
   }
-  .carousel-inner {
-    margin-left: -6px;
+  #menu .btn--boton {
+    font-size: 20px;
+    padding: 2.5px;
   }
-  .footer {
-    margin-left: 126px;
+  .card-body {
+    width: 100%;
+    height: 230px;
   }
-  #historia, #historia--parrafo, td {
-    font-size: 25px;
-    padding: 7px 5px;
+  .card-body .card-author {
+    display: unset;
   }
-  .images img {
-    width: 659px;
+  .card-body a {
+    margin-top: 0px;
+    font-size: 19px;
+  }
+  .galeria {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
   }
 }
 /*# sourceMappingURL=estilos.css.map */

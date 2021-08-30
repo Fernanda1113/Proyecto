@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="Enviar historias" />
-    <title>Comparte tu historia</title>
+    <title>Compra tu libro</title>
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
@@ -30,26 +30,12 @@
                 <a href="../index.html" class="btn--boton" title="inicio">Inicio</a>
                 <a href="../contenido/historias.html" class="btn--boton" title="historias">Historias</a>
                 <a href="../contenido/imagenes.html" class="btn--boton" title="media">Media</a>
+                <a href="../contenido/tienda.html" class="btn--boton" title="tienda">Tienda</a>  
                 <a href="../contenido/contacto.html" class="btn--boton" title="contacto">Contacto</a>
-                <a href="../contenido/tienda.html" class="btn--boton" title="tienda">Tienda</a>
             </nav>
         </div>
-        <div class="dropdown">
-            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Bolsa de compras<span id="carroCantidad" class="badge badge-light">0</span>
-            </button>
-            <div id="carroLibros" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            </div>
-        </div>
-
-        <div id="indicadorCarga" class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Cargando...</span>
-            </div>
-        </div>
-        <hr>
-        <div id="contenedorLibros">
-            <!--Aquí es donde tengo las cards-->
+        <div class="container">
+            <h1>Tu carro de compras</h1>
         </div>
         <a href="#" class="subir">Ir arriba</a>
         <a href="https://api.whatsapp.com/send?phone=+543023855633&text=Hola,%20me%20gustar%C3%ADa%20contar%20mi%20historia%20"
@@ -84,7 +70,7 @@
     crossorigin="anonymous"></script>
     
     <script src="../js/main.js"></script>
-    <script src="../js/complemento.js"></script>
+    <script src="../js/datos.json"></script>
 </body>
 
 </html>
