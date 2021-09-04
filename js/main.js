@@ -44,6 +44,7 @@ const mostrarCards = data => {
     const clone = templateCard.cloneNode(true)
     fragment.appendChild(clone)
   })
+
   cards.appendChild(fragment)
 }
 

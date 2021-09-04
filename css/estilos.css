@@ -267,6 +267,7 @@ h2, h3 {
   color: maroon;
   font-family: "Caveat", cursive;
   font-size: 20px;
+  margin: -27px auto 2em;
   text-decoration: none;
   display: block;
   float: right;
