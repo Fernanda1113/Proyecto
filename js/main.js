@@ -1,3 +1,4 @@
+//
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
@@ -6,7 +7,7 @@ const templateFooter = document.getElementById('template-footer').content
 const templateCarro = document.getElementById('template-carro').content
 const fragment = document.createDocumentFragment()
 let carro = {}
-
+//utilizando DOM para agregar
 document.addEventListener('DOMContentLoaded', () => {
    datos()
    if(localStorage.getItem('carro')){
@@ -21,7 +22,7 @@ cards.addEventListener('click', e =>{
 items.addEventListener('click', e =>{
   btnEjecutar(e)
 })
-
+//llamando la base de datos para mostrarlo
 const datos = async() => {
   try{
     const res = await fetch('../js/datos.json');
@@ -32,7 +33,7 @@ const datos = async() => {
     console.log(error)
   }
 }
-
+//Agregar cards
 const mostrarCards = data => {
   data.forEach(libro =>{
     templateCard.querySelector('h5').textContent = libro.titulo
@@ -70,7 +71,7 @@ if(carro.hasOwnProperty(libro.id)) {
   carro[libro.id] = {...libro}
   mostrarCarro()
 }
-
+//objetos carro - 
 const mostrarCarro = () => {
   items.innerHTML= ''
   Object.values(carro).forEach(libro => {
@@ -100,6 +101,7 @@ const mostrarFooter = () => {
     `
     return
   }
+  //suma de la cantidad y total
   const total = Object.values(carro).reduce((acc, {cantidad}) => acc + cantidad ,0)
   const elPrecio = Object.values(carro).reduce((acc, {cantidad, precio})=> acc + cantidad * precio ,0)
   
@@ -109,7 +111,7 @@ const mostrarFooter = () => {
   const clone = templateFooter.cloneNode(true)
   fragment.appendChild(clone)
   footer.appendChild(fragment)
-
+  //Eliminar lo del carrito 
   const btnVaciar = document.getElementById('vaciar-carro')
   btnVaciar.addEventListener('click', () => {
     carro = {}
